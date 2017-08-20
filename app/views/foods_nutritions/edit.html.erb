@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @foods_nutrition.errors.any? %>
+  <% @foods_nutrition.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Foods Nutrition #<%= @foods_nutrition.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_foods_nutrition/<%= @foods_nutrition.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for foods_id -->
+      <div class="form-group">
+        <label for="foods_id" class="control-label">
+          Foods
+        </label>
+
+        <input type="text" id="foods_id" name="foods_id" placeholder="Foods" class="form-control" value="<%= @foods_nutrition.foods_id %>">
+      </div>
+
+      <!-- Label and input for foodscatagory_id -->
+      <div class="form-group">
+        <label for="foodscatagory_id" class="control-label">
+          Foodscatagory
+        </label>
+
+        <input type="text" id="foodscatagory_id" name="foodscatagory_id" placeholder="Foodscatagory" class="form-control" value="<%= @foods_nutrition.foodscatagory_id %>">
+      </div>
+
+      <!-- Label and input for foods_calories -->
+      <div class="form-group">
+        <label for="foods_calories" class="control-label">
+          Foods calories
+        </label>
+
+        <input type="text" id="foods_calories" name="foods_calories" placeholder="Foods calories" class="form-control" value="<%= @foods_nutrition.foods_calories %>">
+      </div>
+
+      <!-- Label and input for foods_carbs -->
+      <div class="form-group">
+        <label for="foods_carbs" class="control-label">
+          Foods carbs
+        </label>
+
+        <input type="text" id="foods_carbs" name="foods_carbs" placeholder="Foods carbs" class="form-control" value="<%= @foods_nutrition.foods_carbs %>">
+      </div>
+
+      <!-- Label and input for foods_fat -->
+      <div class="form-group">
+        <label for="foods_fat" class="control-label">
+          Foods fat
+        </label>
+
+        <input type="text" id="foods_fat" name="foods_fat" placeholder="Foods fat" class="form-control" value="<%= @foods_nutrition.foods_fat %>">
+      </div>
+
+      <!-- Label and input for foods_sugar -->
+      <div class="form-group">
+        <label for="foods_sugar" class="control-label">
+          Foods sugar
+        </label>
+
+        <input type="text" id="foods_sugar" name="foods_sugar" placeholder="Foods sugar" class="form-control" value="<%= @foods_nutrition.foods_sugar %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Foods Nutrition
+      </button>
+      or
+      <a href="/foods_nutritions/<%= @foods_nutrition.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

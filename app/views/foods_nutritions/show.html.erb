@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3>Foods Nutrition #<%= @foods_nutrition.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Foods</dt>
+      <dd><%= @foods_nutrition.foods_id %></dd>
+
+      <dt>Foodscatagory</dt>
+      <dd><%= @foods_nutrition.foodscatagory_id %></dd>
+
+      <dt>Foods calories</dt>
+      <dd><%= @foods_nutrition.foods_calories %></dd>
+
+      <dt>Foods carbs</dt>
+      <dd><%= @foods_nutrition.foods_carbs %></dd>
+
+      <dt>Foods fat</dt>
+      <dd><%= @foods_nutrition.foods_fat %></dd>
+
+      <dt>Foods sugar</dt>
+      <dd><%= @foods_nutrition.foods_sugar %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/foods_nutritions" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/foods_nutritions/<%= @foods_nutrition.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_foods_nutrition/<%= @foods_nutrition.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

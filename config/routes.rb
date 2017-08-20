@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Foods_nutrition resource:
+  # CREATE
+  get "/foods_nutritions/new", :controller => "foods_nutritions", :action => "new"
+  post "/create_foods_nutrition", :controller => "foods_nutritions", :action => "create"
+
+  # READ
+  get "/foods_nutritions", :controller => "foods_nutritions", :action => "index"
+  get "/foods_nutritions/:id", :controller => "foods_nutritions", :action => "show"
+
+  # UPDATE
+  get "/foods_nutritions/:id/edit", :controller => "foods_nutritions", :action => "edit"
+  post "/update_foods_nutrition/:id", :controller => "foods_nutritions", :action => "update"
+
+  # DELETE
+  get "/delete_foods_nutrition/:id", :controller => "foods_nutritions", :action => "destroy"
+  #------------------------------
+
   # Routes for the User_cheat_allowance resource:
   # CREATE
   get "/user_cheat_allowances/new", :controller => "user_cheat_allowances", :action => "new"
