@@ -20,7 +20,7 @@
 
       <% @foods_nutritions.each do |foods_nutrition| %>
       <tr>
-        <td><%= foods_nutrition.foods_id %></td>
+        <td><%= foods_nutrition.foods.food_name %></td>
         <td><%= foods_nutrition.foodscatagory_id %></td>
         <td><%= foods_nutrition.foods_calories %></td>
         <td><%= foods_nutrition.foods_carbs %></td>
