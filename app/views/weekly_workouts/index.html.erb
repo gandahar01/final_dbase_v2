@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Weekly workouts
+    <a href="/weekly_workouts/new" class="btn btn-lg btn-success">New Weekly workout</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>User</th>
+        <th>Daily workout counter</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @weekly_workouts.each do |weekly_workout| %>
+      <tr>
+        <td><%= weekly_workout.user_id %></td>
+        <td><%= weekly_workout.daily_workout_counter %></td>
+        <td>
+          <a href="/weekly_workouts/<%= weekly_workout.id %>" class="btn btn-primary">Show</a>
+          <a href="/weekly_workouts/<%= weekly_workout.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_weekly_workout/<%= weekly_workout.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Weekly_workout resource:
+  # CREATE
+  get "/weekly_workouts/new", :controller => "weekly_workouts", :action => "new"
+  post "/create_weekly_workout", :controller => "weekly_workouts", :action => "create"
+
+  # READ
+  get "/weekly_workouts", :controller => "weekly_workouts", :action => "index"
+  get "/weekly_workouts/:id", :controller => "weekly_workouts", :action => "show"
+
+  # UPDATE
+  get "/weekly_workouts/:id/edit", :controller => "weekly_workouts", :action => "edit"
+  post "/update_weekly_workout/:id", :controller => "weekly_workouts", :action => "update"
+
+  # DELETE
+  get "/delete_weekly_workout/:id", :controller => "weekly_workouts", :action => "destroy"
+  #------------------------------
+
   # Routes for the Daily_workout resource:
   # CREATE
   get "/daily_workouts/new", :controller => "daily_workouts", :action => "new"
