@@ -21,7 +21,7 @@
         <td><%= daily_workout.workout_date %></td>
         <td><%= daily_workout.dailyworkout_check %></td>
         <td><%= daily_workout.user.email %></td>
-        <td><%= daily_workout.weeklyworkout_id %></td>
+        <td><%= daily_workout.weeklyworkout.user_id %></td>
         <td>
           <a href="/daily_workouts/<%= daily_workout.id %>" class="btn btn-primary">Show</a>
           <a href="/daily_workouts/<%= daily_workout.id %>/edit" class="btn btn-warning">Edit</a>
