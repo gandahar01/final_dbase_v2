@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>
+    User cheat allowances
+    <a href="/user_cheat_allowances/new" class="btn btn-lg btn-success">New User cheat allowance</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Cheat calories</th>
+        <th>Cheat carbs</th>
+        <th>Cheat fat</th>
+        <th>Cheat sugar</th>
+        <th>Week date</th>
+        <th>User</th>
+        <th>Foodscatagory</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @user_cheat_allowances.each do |user_cheat_allowance| %>
+      <tr>
+        <td><%= user_cheat_allowance.cheat_calories %></td>
+        <td><%= user_cheat_allowance.cheat_carbs %></td>
+        <td><%= user_cheat_allowance.cheat_fat %></td>
+        <td><%= user_cheat_allowance.cheat_sugar %></td>
+        <td><%= user_cheat_allowance.week_date %></td>
+        <td><%= user_cheat_allowance.user_id %></td>
+        <td><%= user_cheat_allowance.foodscatagory_id %></td>
+        <td>
+          <a href="/user_cheat_allowances/<%= user_cheat_allowance.id %>" class="btn btn-primary">Show</a>
+          <a href="/user_cheat_allowances/<%= user_cheat_allowance.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_user_cheat_allowance/<%= user_cheat_allowance.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

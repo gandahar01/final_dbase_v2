@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @user_cheat_allowance.errors.any? %>
+  <% @user_cheat_allowance.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit User Cheat Allowance #<%= @user_cheat_allowance.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_user_cheat_allowance/<%= @user_cheat_allowance.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for cheat_calories -->
+      <div class="form-group">
+        <label for="cheat_calories" class="control-label">
+          Cheat calories
+        </label>
+
+        <input type="text" id="cheat_calories" name="cheat_calories" placeholder="Cheat calories" class="form-control" value="<%= @user_cheat_allowance.cheat_calories %>">
+      </div>
+
+      <!-- Label and input for cheat_carbs -->
+      <div class="form-group">
+        <label for="cheat_carbs" class="control-label">
+          Cheat carbs
+        </label>
+
+        <input type="text" id="cheat_carbs" name="cheat_carbs" placeholder="Cheat carbs" class="form-control" value="<%= @user_cheat_allowance.cheat_carbs %>">
+      </div>
+
+      <!-- Label and input for cheat_fat -->
+      <div class="form-group">
+        <label for="cheat_fat" class="control-label">
+          Cheat fat
+        </label>
+
+        <input type="text" id="cheat_fat" name="cheat_fat" placeholder="Cheat fat" class="form-control" value="<%= @user_cheat_allowance.cheat_fat %>">
+      </div>
+
+      <!-- Label and input for cheat_sugar -->
+      <div class="form-group">
+        <label for="cheat_sugar" class="control-label">
+          Cheat sugar
+        </label>
+
+        <input type="text" id="cheat_sugar" name="cheat_sugar" placeholder="Cheat sugar" class="form-control" value="<%= @user_cheat_allowance.cheat_sugar %>">
+      </div>
+
+      <!-- Label and input for week_date -->
+      <div class="form-group">
+        <label for="week_date" class="control-label">
+          Week date
+        </label>
+
+        <input type="text" id="week_date" name="week_date" placeholder="Week date" class="form-control" value="<%= @user_cheat_allowance.week_date %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @user_cheat_allowance.user_id %>">
+      </div>
+
+      <!-- Label and input for foodscatagory_id -->
+      <div class="form-group">
+        <label for="foodscatagory_id" class="control-label">
+          Foodscatagory
+        </label>
+
+        <input type="text" id="foodscatagory_id" name="foodscatagory_id" placeholder="Foodscatagory" class="form-control" value="<%= @user_cheat_allowance.foodscatagory_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update User Cheat Allowance
+      </button>
+      or
+      <a href="/user_cheat_allowances/<%= @user_cheat_allowance.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
