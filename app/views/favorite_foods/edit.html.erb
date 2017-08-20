@@ -36,14 +36,8 @@
         <%= select_tag(:foods_id, options_from_collection_for_select(Food.all, :id, :food_name, @favorite_food.foods_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for user_id -->
-      <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
-
-        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @favorite_food.user_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <button class="btn btn-warning">
         Update Favorite Food
