@@ -1,5 +1,7 @@
 ActiveAdmin.register UserCheatAllowance do
 
+ permit_params :cheat_calories, :cheat_carbs, :cheat_fat, :cheat_sugar, :week_date, :user_id, :foodscatagory_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
