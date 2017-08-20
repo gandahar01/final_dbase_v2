@@ -1,4 +1,14 @@
 class FavoriteFoodsController < ApplicationController
+  before_action :current_user_must_be_favorite_food_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_favorite_food_user
+    favorite_food = FavoriteFood.find(params[:id])
+
+    unless current_user == favorite_food.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @favorite_foods = FavoriteFood.all
 
