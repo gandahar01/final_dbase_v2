@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Daily_workout resource:
+  # CREATE
+  get "/daily_workouts/new", :controller => "daily_workouts", :action => "new"
+  post "/create_daily_workout", :controller => "daily_workouts", :action => "create"
+
+  # READ
+  get "/daily_workouts", :controller => "daily_workouts", :action => "index"
+  get "/daily_workouts/:id", :controller => "daily_workouts", :action => "show"
+
+  # UPDATE
+  get "/daily_workouts/:id/edit", :controller => "daily_workouts", :action => "edit"
+  post "/update_daily_workout/:id", :controller => "daily_workouts", :action => "update"
+
+  # DELETE
+  get "/delete_daily_workout/:id", :controller => "daily_workouts", :action => "destroy"
+  #------------------------------
+
   # Routes for the Favorite_food resource:
   # CREATE
   get "/favorite_foods/new", :controller => "favorite_foods", :action => "new"

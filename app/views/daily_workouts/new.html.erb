@@ -1,0 +1,63 @@
+<!-- Validation failure messages -->
+<% if @daily_workout.errors.any? %>
+  <% @daily_workout.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Daily Workout</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_daily_workout" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for workout_date -->
+      <div class="form-group">
+        <label for="workout_date" class="control-label">
+          Workout date
+        </label>
+
+        <input type="text" id="workout_date" name="workout_date" placeholder="Workout date" class="form-control" value="<%= @daily_workout.workout_date %>">
+      </div>
+
+      <!-- Label and input for dailyworkout_check -->
+      <div class="checkbox">
+        <label for="dailyworkout_check">
+          <input type="checkbox" id="dailyworkout_check" name="dailyworkout_check" value="1" <%= "checked" if @daily_workout.dailyworkout_check %>>
+          Dailyworkout check
+        </label>
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @daily_workout.user_id %>">
+      </div>
+
+      <!-- Label and input for weeklyworkout_id -->
+      <div class="form-group">
+        <label for="weeklyworkout_id" class="control-label">
+          Weeklyworkout
+        </label>
+
+        <input type="text" id="weeklyworkout_id" name="weeklyworkout_id" placeholder="Weeklyworkout" class="form-control" value="<%= @daily_workout.weeklyworkout_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Daily Workout
+      </button>
+      or
+      <a href="/daily_workouts">Cancel</a>
+    </form>
+  </div>
+</div>
