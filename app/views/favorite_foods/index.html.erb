@@ -19,7 +19,7 @@
       <tr>
         <td><%= favorite_food.favoritefood_name %></td>
         <td><%= favorite_food.foods.food_name %></td>
-        <td><%= favorite_food.user_id %></td>
+        <td><%= favorite_food.user.email %></td>
         <td>
           <a href="/favorite_foods/<%= favorite_food.id %>" class="btn btn-primary">Show</a>
           <a href="/favorite_foods/<%= favorite_food.id %>/edit" class="btn btn-warning">Edit</a>
