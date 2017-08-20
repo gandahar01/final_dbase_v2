@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :weekly_workouts,
+             :dependent => :destroy
+
   has_many   :daily_workouts,
              :dependent => :destroy
 
