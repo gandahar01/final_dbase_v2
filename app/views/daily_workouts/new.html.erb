@@ -50,7 +50,7 @@
           Weeklyworkout
         </label>
 
-        <input type="text" id="weeklyworkout_id" name="weeklyworkout_id" placeholder="Weeklyworkout" class="form-control" value="<%= @daily_workout.weeklyworkout_id %>">
+        <%= select_tag(:weeklyworkout_id, options_from_collection_for_select(WeeklyWorkout.all, :id, :user_id, @daily_workout.weeklyworkout_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
