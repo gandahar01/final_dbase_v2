@@ -1,6 +1,6 @@
 class WeeklyWorkoutsController < ApplicationController
   def index
-    @weekly_workouts = WeeklyWorkout.all
+    @weekly_workouts = WeeklyWorkout.page(params[:page]).per(10)
 
     render("weekly_workouts/index.html.erb")
   end
