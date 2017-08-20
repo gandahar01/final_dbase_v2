@@ -1,6 +1,7 @@
 class WeeklyWorkoutsController < ApplicationController
   def index
-    @weekly_workouts = WeeklyWorkout.page(params[:page]).per(10)
+    @q = WeeklyWorkout.ransack(params[:q])
+    @weekly_workouts = @q.result(:distinct => true).includes(:user, :daily_workouts).page(params[:page]).per(10)
 
     render("weekly_workouts/index.html.erb")
   end
