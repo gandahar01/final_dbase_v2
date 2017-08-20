@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h3>Foods Catagory #<%= @foods_catagory.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Foodcatagory name</dt>
+      <dd><%= @foods_catagory.foodcatagory_name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/foods_catagories" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/foods_catagories/<%= @foods_catagory.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_foods_catagory/<%= @foods_catagory.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
