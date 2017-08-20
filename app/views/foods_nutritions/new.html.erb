@@ -33,7 +33,7 @@
           Foodscatagory
         </label>
 
-        <input type="text" id="foodscatagory_id" name="foodscatagory_id" placeholder="Foodscatagory" class="form-control" value="<%= @foods_nutrition.foodscatagory_id %>">
+        <%= select_tag(:foodscatagory_id, options_from_collection_for_select(FoodsCatagory.all, :id, :created_at, @foods_nutrition.foodscatagory_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for foods_calories -->
