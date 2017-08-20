@@ -1,5 +1,7 @@
 ActiveAdmin.register FoodsNutrition do
 
+ permit_params :foods_id, :foodscatagory_id, :foods_calories, :foods_carbs, :foods_fat, :foods_sugar
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
