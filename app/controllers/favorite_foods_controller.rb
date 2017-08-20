@@ -1,5 +1,5 @@
 class FavoriteFoodsController < ApplicationController
-  before_action :current_user_must_be_favorite_food_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_favorite_food_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_favorite_food_user
     favorite_food = FavoriteFood.find(params[:id])
