@@ -63,14 +63,8 @@
         <input type="text" id="week_date" name="week_date" placeholder="Week date" class="form-control" value="<%= @user_cheat_allowance.week_date %>">
       </div>
 
-      <!-- Label and input for user_id -->
-      <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
-
-        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @user_cheat_allowance.user_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for foodscatagory_id -->
       <div class="form-group">
