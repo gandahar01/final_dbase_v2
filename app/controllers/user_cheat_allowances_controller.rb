@@ -1,5 +1,5 @@
 class UserCheatAllowancesController < ApplicationController
-  before_action :current_user_must_be_user_cheat_allowance_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_user_cheat_allowance_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_user_cheat_allowance_user
     user_cheat_allowance = UserCheatAllowance.find(params[:id])
