@@ -1,5 +1,7 @@
 ActiveAdmin.register WeeklyWorkout do
 
+ permit_params :user_id, :daily_workout_counter
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
