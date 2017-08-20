@@ -32,12 +32,14 @@
       <a href="/user_cheat_allowances" class="btn btn-primary">
         Back
       </a>
-      <a href="/user_cheat_allowances/<%= @user_cheat_allowance.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_user_cheat_allowance/<%= @user_cheat_allowance.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @user_cheat_allowance.user %>
+        <a href="/user_cheat_allowances/<%= @user_cheat_allowance.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_user_cheat_allowance/<%= @user_cheat_allowance.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
