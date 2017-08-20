@@ -10,7 +10,7 @@ class FavoriteFoodsController < ApplicationController
   end
 
   def index
-    @favorite_foods = FavoriteFood.all
+    @favorite_foods = current_user.favorite_foods.page(params[:page]).per(10)
 
     render("favorite_foods/index.html.erb")
   end
