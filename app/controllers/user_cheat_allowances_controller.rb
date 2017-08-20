@@ -10,7 +10,7 @@ class UserCheatAllowancesController < ApplicationController
   end
 
   def index
-    @user_cheat_allowances = UserCheatAllowance.all
+    @user_cheat_allowances = current_user.user_cheat_allowances.page(params[:page]).per(10)
 
     render("user_cheat_allowances/index.html.erb")
   end
