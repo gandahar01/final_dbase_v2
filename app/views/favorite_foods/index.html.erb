@@ -18,7 +18,7 @@
       <% @favorite_foods.each do |favorite_food| %>
       <tr>
         <td><%= favorite_food.favoritefood_name %></td>
-        <td><%= favorite_food.foods_id %></td>
+        <td><%= favorite_food.foods.food_name %></td>
         <td><%= favorite_food.user_id %></td>
         <td>
           <a href="/favorite_foods/<%= favorite_food.id %>" class="btn btn-primary">Show</a>
