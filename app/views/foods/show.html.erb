@@ -54,6 +54,71 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_foods_nutrition" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for foods_id -->
+      <div class="form-group">
+        <label for="foods_id" class="control-label">
+          Foods
+        </label>
+
+        <%= select_tag(:foods_id, options_from_collection_for_select(Food.all, :id, :food_name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for foodscatagory_id -->
+      <div class="form-group">
+        <label for="foodscatagory_id" class="control-label">
+          Foodscatagory
+        </label>
+
+        <%= select_tag(:foodscatagory_id, options_from_collection_for_select(FoodsCatagory.all, :id, :created_at), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for foods_calories -->
+      <div class="form-group">
+        <label for="foods_calories" class="control-label">
+          Foods calories
+        </label>
+
+        <input type="text" id="foods_calories" name="foods_calories" placeholder="Foods calories" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for foods_carbs -->
+      <div class="form-group">
+        <label for="foods_carbs" class="control-label">
+          Foods carbs
+        </label>
+
+        <input type="text" id="foods_carbs" name="foods_carbs" placeholder="Foods carbs" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for foods_fat -->
+      <div class="form-group">
+        <label for="foods_fat" class="control-label">
+          Foods fat
+        </label>
+
+        <input type="text" id="foods_fat" name="foods_fat" placeholder="Foods fat" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for foods_sugar -->
+      <div class="form-group">
+        <label for="foods_sugar" class="control-label">
+          Foods sugar
+        </label>
+
+        <input type="text" id="foods_sugar" name="foods_sugar" placeholder="Foods sugar" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Foods Nutrition
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -85,6 +150,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_favorite_food" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for favoritefood_name -->
+      <div class="form-group">
+        <label for="favoritefood_name" class="control-label">
+          Favoritefood name
+        </label>
+
+        <input type="text" id="favoritefood_name" name="favoritefood_name" placeholder="Favoritefood name" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for foods_id -->
+      <div class="form-group">
+        <label for="foods_id" class="control-label">
+          Foods
+        </label>
+
+        <%= select_tag(:foods_id, options_from_collection_for_select(Food.all, :id, :food_name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Favorite Food
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

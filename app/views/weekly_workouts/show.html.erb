@@ -54,6 +54,52 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_daily_workout" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for workout_date -->
+      <div class="form-group">
+        <label for="workout_date" class="control-label">
+          Workout date
+        </label>
+
+        <input type="text" id="workout_date" name="workout_date" placeholder="Workout date" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for dailyworkout_check -->
+      <div class="checkbox">
+        <label for="dailyworkout_check">
+          <input type="checkbox" id="dailyworkout_check" name="dailyworkout_check" value="1" <%= "checked" if @daily_workout.dailyworkout_check %>>
+          Dailyworkout check
+        </label>
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for weeklyworkout_id -->
+      <div class="form-group">
+        <label for="weeklyworkout_id" class="control-label">
+          Weeklyworkout
+        </label>
+
+        <%= select_tag(:weeklyworkout_id, options_from_collection_for_select(WeeklyWorkout.all, :id, :user_id), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Daily Workout
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

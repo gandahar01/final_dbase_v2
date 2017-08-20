@@ -6,6 +6,7 @@ class WeeklyWorkoutsController < ApplicationController
   end
 
   def show
+    @daily_workout = DailyWorkout.new
     @weekly_workout = WeeklyWorkout.find(params[:id])
 
     render("weekly_workouts/show.html.erb")

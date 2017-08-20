@@ -6,6 +6,8 @@ class FoodsCatagoriesController < ApplicationController
   end
 
   def show
+    @user_cheat_allowance = UserCheatAllowance.new
+    @foods_nutrition = FoodsNutrition.new
     @foods_catagory = FoodsCatagory.find(params[:id])
 
     render("foods_catagories/show.html.erb")
