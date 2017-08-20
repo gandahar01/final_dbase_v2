@@ -23,3 +23,65 @@
     </div>
   </div>
 </div>
+
+<!-- A Foods catagory has many foods_nutritions -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Foods Nutritions
+      </li>
+
+      <% @foods_catagory.foods_nutritions.each do |foods_nutrition| %>
+        <li class="list-group-item">
+          <a href="/foods_nutritions/<%= foods_nutrition.id %>">
+            <%= foods_nutrition.foods_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/foods_nutritions/<%= foods_nutrition.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/foods_nutritions/<%= foods_nutrition.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_foods_nutrition/<%= foods_nutrition.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Foods catagory has many user_cheat_allowances -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        User Cheat Allowances
+      </li>
+
+      <% @foods_catagory.user_cheat_allowances.each do |user_cheat_allowance| %>
+        <li class="list-group-item">
+          <a href="/user_cheat_allowances/<%= user_cheat_allowance.id %>">
+            <%= user_cheat_allowance.week_date %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/user_cheat_allowances/<%= user_cheat_allowance.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/user_cheat_allowances/<%= user_cheat_allowance.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_user_cheat_allowance/<%= user_cheat_allowance.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

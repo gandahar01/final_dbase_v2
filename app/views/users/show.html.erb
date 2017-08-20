@@ -29,3 +29,127 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many user_cheat_allowances -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        User Cheat Allowances
+      </li>
+
+      <% @user.user_cheat_allowances.each do |user_cheat_allowance| %>
+        <li class="list-group-item">
+          <a href="/user_cheat_allowances/<%= user_cheat_allowance.id %>">
+            <%= user_cheat_allowance.week_date %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/user_cheat_allowances/<%= user_cheat_allowance.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/user_cheat_allowances/<%= user_cheat_allowance.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_user_cheat_allowance/<%= user_cheat_allowance.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many favorite_foods -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Favorite Foods
+      </li>
+
+      <% @user.favorite_foods.each do |favorite_food| %>
+        <li class="list-group-item">
+          <a href="/favorite_foods/<%= favorite_food.id %>">
+            <%= favorite_food.favoritefood_name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/favorite_foods/<%= favorite_food.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/favorite_foods/<%= favorite_food.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_favorite_food/<%= favorite_food.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many daily_workouts -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Daily Workouts
+      </li>
+
+      <% @user.daily_workouts.each do |daily_workout| %>
+        <li class="list-group-item">
+          <a href="/daily_workouts/<%= daily_workout.id %>">
+            <%= daily_workout.workout_date %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/daily_workouts/<%= daily_workout.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/daily_workouts/<%= daily_workout.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_daily_workout/<%= daily_workout.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many weekly_workouts -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Weekly Workouts
+      </li>
+
+      <% @user.weekly_workouts.each do |weekly_workout| %>
+        <li class="list-group-item">
+          <a href="/weekly_workouts/<%= weekly_workout.id %>">
+            <%= weekly_workout.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/weekly_workouts/<%= weekly_workout.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/weekly_workouts/<%= weekly_workout.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_weekly_workout/<%= weekly_workout.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

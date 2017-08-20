@@ -26,3 +26,65 @@
     </div>
   </div>
 </div>
+
+<!-- A Food has many foods_nutritions -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Foods Nutritions
+      </li>
+
+      <% @food.foods_nutritions.each do |foods_nutrition| %>
+        <li class="list-group-item">
+          <a href="/foods_nutritions/<%= foods_nutrition.id %>">
+            <%= foods_nutrition.foods_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/foods_nutritions/<%= foods_nutrition.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/foods_nutritions/<%= foods_nutrition.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_foods_nutrition/<%= foods_nutrition.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Food has many favorite_foods -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Favorite Foods
+      </li>
+
+      <% @food.favorite_foods.each do |favorite_food| %>
+        <li class="list-group-item">
+          <a href="/favorite_foods/<%= favorite_food.id %>">
+            <%= favorite_food.favoritefood_name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/favorite_foods/<%= favorite_food.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/favorite_foods/<%= favorite_food.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_favorite_food/<%= favorite_food.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

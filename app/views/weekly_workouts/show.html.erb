@@ -26,3 +26,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Weekly workout has many daily_workouts -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Daily Workouts
+      </li>
+
+      <% @weekly_workout.daily_workouts.each do |daily_workout| %>
+        <li class="list-group-item">
+          <a href="/daily_workouts/<%= daily_workout.id %>">
+            <%= daily_workout.workout_date %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/daily_workouts/<%= daily_workout.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/daily_workouts/<%= daily_workout.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_daily_workout/<%= daily_workout.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
