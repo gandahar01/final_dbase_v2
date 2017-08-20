@@ -26,8 +26,20 @@
         <td><%= user_cheat_allowance.cheat_fat %></td>
         <td><%= user_cheat_allowance.cheat_sugar %></td>
         <td><%= user_cheat_allowance.week_date %></td>
-        <td><%= user_cheat_allowance.user.email %></td>
-        <td><%= user_cheat_allowance.foodscatagory.created_at %></td>
+        <td>
+          <% if user_cheat_allowance.user.present? %>
+            <a href="/users/<%= user_cheat_allowance.user.id %>">
+              <%= user_cheat_allowance.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if user_cheat_allowance.foodscatagory.present? %>
+            <a href="/foods_catagories/<%= user_cheat_allowance.foodscatagory.id %>">
+              <%= user_cheat_allowance.foodscatagory.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/user_cheat_allowances/<%= user_cheat_allowance.id %>" class="btn btn-primary">Show</a>
           

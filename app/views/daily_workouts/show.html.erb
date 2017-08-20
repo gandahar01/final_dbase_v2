@@ -12,10 +12,22 @@
       <dd><%= @daily_workout.dailyworkout_check %></dd>
 
       <dt>User</dt>
-      <dd><%= @daily_workout.user_id %></dd>
+      <dd>
+        <% if @daily_workout.user.present? %>
+          <a href="/users/<%= @daily_workout.user_id %>">
+            <%= @daily_workout.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Weeklyworkout</dt>
-      <dd><%= @daily_workout.weeklyworkout_id %></dd>
+      <dd>
+        <% if @daily_workout.weeklyworkout.present? %>
+          <a href="/weekly_workouts/<%= @daily_workout.weeklyworkout_id %>">
+            <%= @daily_workout.weeklyworkout.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

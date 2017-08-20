@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Foods</dt>
-      <dd><%= @foods_nutrition.foods_id %></dd>
+      <dd>
+        <% if @foods_nutrition.foods.present? %>
+          <a href="/foods/<%= @foods_nutrition.foods_id %>">
+            <%= @foods_nutrition.foods.food_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Foodscatagory</dt>
-      <dd><%= @foods_nutrition.foodscatagory_id %></dd>
+      <dd>
+        <% if @foods_nutrition.foodscatagory.present? %>
+          <a href="/foods_catagories/<%= @foods_nutrition.foodscatagory_id %>">
+            <%= @foods_nutrition.foodscatagory.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Foods calories</dt>
       <dd><%= @foods_nutrition.foods_calories %></dd>

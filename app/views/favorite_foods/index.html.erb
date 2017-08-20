@@ -18,8 +18,20 @@
       <% @favorite_foods.each do |favorite_food| %>
       <tr>
         <td><%= favorite_food.favoritefood_name %></td>
-        <td><%= favorite_food.foods.food_name %></td>
-        <td><%= favorite_food.user.email %></td>
+        <td>
+          <% if favorite_food.foods.present? %>
+            <a href="/foods/<%= favorite_food.foods.id %>">
+              <%= favorite_food.foods.food_name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if favorite_food.user.present? %>
+            <a href="/users/<%= favorite_food.user.id %>">
+              <%= favorite_food.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/favorite_foods/<%= favorite_food.id %>" class="btn btn-primary">Show</a>
           

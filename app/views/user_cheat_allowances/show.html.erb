@@ -21,10 +21,22 @@
       <dd><%= @user_cheat_allowance.week_date %></dd>
 
       <dt>User</dt>
-      <dd><%= @user_cheat_allowance.user_id %></dd>
+      <dd>
+        <% if @user_cheat_allowance.user.present? %>
+          <a href="/users/<%= @user_cheat_allowance.user_id %>">
+            <%= @user_cheat_allowance.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Foodscatagory</dt>
-      <dd><%= @user_cheat_allowance.foodscatagory_id %></dd>
+      <dd>
+        <% if @user_cheat_allowance.foodscatagory.present? %>
+          <a href="/foods_catagories/<%= @user_cheat_allowance.foodscatagory_id %>">
+            <%= @user_cheat_allowance.foodscatagory.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

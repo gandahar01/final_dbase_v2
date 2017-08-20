@@ -16,7 +16,13 @@
 
       <% @weekly_workouts.each do |weekly_workout| %>
       <tr>
-        <td><%= weekly_workout.user.email %></td>
+        <td>
+          <% if weekly_workout.user.present? %>
+            <a href="/users/<%= weekly_workout.user.id %>">
+              <%= weekly_workout.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= weekly_workout.daily_workout_counter %></td>
         <td>
           <a href="/weekly_workouts/<%= weekly_workout.id %>" class="btn btn-primary">Show</a>

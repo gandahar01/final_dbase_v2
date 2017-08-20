@@ -9,10 +9,22 @@
       <dd><%= @favorite_food.favoritefood_name %></dd>
 
       <dt>Foods</dt>
-      <dd><%= @favorite_food.foods_id %></dd>
+      <dd>
+        <% if @favorite_food.foods.present? %>
+          <a href="/foods/<%= @favorite_food.foods_id %>">
+            <%= @favorite_food.foods.food_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>User</dt>
-      <dd><%= @favorite_food.user_id %></dd>
+      <dd>
+        <% if @favorite_food.user.present? %>
+          <a href="/users/<%= @favorite_food.user_id %>">
+            <%= @favorite_food.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

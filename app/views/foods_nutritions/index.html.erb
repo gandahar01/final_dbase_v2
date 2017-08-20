@@ -20,8 +20,20 @@
 
       <% @foods_nutritions.each do |foods_nutrition| %>
       <tr>
-        <td><%= foods_nutrition.foods.food_name %></td>
-        <td><%= foods_nutrition.foodscatagory.created_at %></td>
+        <td>
+          <% if foods_nutrition.foods.present? %>
+            <a href="/foods/<%= foods_nutrition.foods.id %>">
+              <%= foods_nutrition.foods.food_name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if foods_nutrition.foodscatagory.present? %>
+            <a href="/foods_catagories/<%= foods_nutrition.foodscatagory.id %>">
+              <%= foods_nutrition.foodscatagory.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= foods_nutrition.foods_calories %></td>
         <td><%= foods_nutrition.foods_carbs %></td>
         <td><%= foods_nutrition.foods_fat %></td>
